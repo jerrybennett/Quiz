@@ -1,0 +1,96 @@
+@font-face { 
+    font-family: 'gyparodyhv';
+    src: url('gyparodyhv.ttf');
+    }
+@font-face {
+    font-family: 'okaf';
+    src: url('okaf.otf')
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #32373c; /* Matching the Jeopardy blue */
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+.board-title {
+    font-family: 'gyparodyhv';
+    font-size: 60px;
+    /* color: #ffffff; /* Matching the Jeopardy blue */
+    margin: 0 auto 20px; /* Ensures title is centered with bottom margin */
+    color: #de4b51;
+    text-shadow: -1px -1px 0 #fcb900, 1px -1px 0 #0693e3, -1px 1px 0 #00d084, 2px 2px 0 #9b51e0;
+}
+
+.category, .question {
+    background-color: #7bdcb5;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Sets the card height to 200px */
+    min-width: 180px; /* Keeps the minimum width */
+    max-width: 200px; /* Optional: You can adjust this as needed */
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    margin: 10px auto; /* Centers cards */
+    padding: 1rem;
+}
+
+.jeopardy-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    padding: 0 20px; /* Adds some padding on the sides */
+}
+
+.category {
+    font-size: 30px;
+    font-family: 'okaf';
+    font-weight: bold;
+    height: 50px;
+    color: #000000;
+}
+
+.question {
+    font-size: 20px;
+    font-family: 'okaf';
+    background-color: #00b3e6;
+    transition: background-color 0.5s ease;
+    text-shadow: 3px 3px 4px black;
+}
+
+.question.flipped {
+    font-family: 'Arial', sans-serif;
+    background-color: #d9d9d9;
+    color: #000000;
+    text-shadow: none;
+}
+
+.jeopardy-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 categories */
+    gap: 10px;
+}
+
+.category-column {
+    display: flex;
+    flex-direction: column;
+}
+.question.blank {
+    background-color: #00b3e6; /* Adjust to your original card color */
+    color: #00b3e6; /* Hide text by matching it to the background color */
+}
