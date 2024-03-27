@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeopardy! Board</title>
+<title>Review Board</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,8 @@
 <div class="board-title">
     2024 CYAN Phase 2 Review!
 </div>
-<div class="jeopardy-board">
+<div class="text-display"></div>
+<div class="game-board">
     <!-- Category Columns -->
     <div class="category-column">
         <div class="category">Linux</div>
@@ -23,6 +24,7 @@
         <div class="question" data-question="What is 'grep' ?" data-answer="This Linux utility is used for searching plain-text data sets for lines that match a regular expression." data-value="$800">$800</div>
         <div class="question" data-question="What is 'apt' ?" data-answer="This command is used to install packages in the Debian and Ubuntu repositories." data-value="$1000">$1000</div>
         <div class="question" data-question="What is '/sbin' ?" data-answer="This directory contains system administration binaries. These are utilities that are usually required for system maintenance and are typically used by the root user (or through sudo for administrative tasks)." data-value="$1200">$1200</div>
+        <div class="question" data-question="What is regex?" data-answer="This command line tool uses a series of characters for pattern matching in text." data-value="$1600">$1600</div>
     </div>
     <div class="category-column">
         <div class="category">Ports & Protocols</div>
@@ -30,10 +32,11 @@
         <!-- Repeat for each category in its own "category-column" -->
         <div class="question" data-question="What is Port 22 (SSH)?" data-answer="You would use this port to securely copy files and directories." data-value="$200">$200</div>
         <div class="question" data-question="What is Port 21 (FTP)?" data-answer="This was the commonly used port for file transfers before ssh was widely adopted." data-value="$400">$400</div>
-        <div class="question" data-question="" data-answer="The year the Berlin Wall fell." data-value="$600">$600</div>
+        <div class="question" data-question="What is NAT?" data-answer="This technology allows us to minimize the use of Public IP addresses in our network." data-value="$600">$600</div>
         <div class="question" data-question="What is RDP?" data-answer="It uses port 3389" data-value="$800">$800</div>
         <div class="question" data-question="What is Port 389?" data-answer="This is the port that LDAP runs on by default." data-value="$1000">$1000</div>
         <div class="question" data-question="What is Port 636?" data-answer="This is the port you can configure to run LDAP securely." data-value="$1200">$1200</div>
+        <div class="question" data-question="What is Port Forwarding?" data-answer="This technology allows remote servers and devices on the internet to be able to access devices that are on a private network." data-value="$1600">$1600</div>
     </div>
     <div class="category-column">
         <div class="category">Attacks!</div>
@@ -44,7 +47,8 @@
         <div class="question" data-question="What is DoS?" data-answer="The type of attack may originate from a single server or host." data-value="$600">$600</div>
         <div class="question" data-question="What is Ransomware?" data-answer="Without proper backups, you may lose all of your data with this attack." data-value="$800">$800</div>
         <div class="question" data-question="What is a SYN Flood?" data-answer="This type of attack uses and incomplete three-way handsake to exhaust server rewources causing a crash of the system." data-value="$1000">$1000</div>
-        <div class="question" data-question="What is " data-answer="The war fought by the Allies and Axis powers from 1939 to 1945." data-value="$1200">$1200</div>
+        <div class="question" data-question="What is DNS Spoofing?" data-answer="When an attcker alters DNS records to convince the victim that the website is legit." data-value="$1200">$1200</div>
+        <div class="question" data-question="What is an Insider Threat?" data-answer="This type of threat can come from someone with elevated privilages within the organization and may or may not be malicious." data-value="$1600">$1600</div>
     </div>
     <div class="category-column">
         <div class="category">Subnetting</div>
@@ -56,6 +60,7 @@
         <div class="question" data-question="What is the Subnet Mask?" data-answer="This concept represents the dividing line between the network portion (prefix) and the host portion of an IP address." data-value="$800">$800</div>
         <div class="question" data-question="What is Network Segmentation?" data-answer="This term describes the practice of limiting access between devices on different subnets to enhance security, often implemented through ACLs on routers." data-value="$1000">$1000</div>
         <div class="question" data-question="What is the logical 'AND' operator" data-answer="This mathematical operator is commonly used to determine whether an IP address belongs to a specific subnet." data-value="$1200">$1200</div>
+        <div class="question" data-question="What is False?" data-answer="A '/25' network has twice as many available IP addresses than a '/24'." data-value="$1600">$1600</div>
     </div>
     <div class="category-column">
         <div class="category">Windows</div>
@@ -66,9 +71,21 @@
         <div class="question" data-question="What is Active Directory?" data-answer="This Windows service, available in enterprise environments, enables the management of authentication and authorization for users and computers within a network." data-value="$600">$600</div>
         <div class="question" data-question="What is the Resource Monitor?" data-answer="This is a graphical interface tool that provides a detailed overview of system performance, including real-time graphs of system resource usage." data-value="$800">$800</div>
         <div class="question" data-question="What is the Registry?" data-answer="This holds configurations and other settings for applications in a Windows system." data-value="$1000">$1000</div>
-        <div class="question" data-question="" data-answer="The war fought by the Allies and Axis powers from 1939 to 1945." data-value="$1200">$1200</div>
+        <div class="question" data-question="What is False?" data-answer="Active Directory and LDAP can NOT be used on the same domain." data-value="$1200">$1200</div>
+        <div class="question" data-question="What is True?" data-answer="PowerShell can be used to administer local users and groups on a remote workstation." data-value="$1600">$1600</div>
     </div>
-    <!-- Repeat for other categories with their questions -->
+    <div class="category-column">
+        <div class="category">Windows</div>
+        <!-- History Questions -->
+        <!-- Repeat for each category in its own "category-column" -->
+        <div class="question" data-question="What are updates and security patches?" data-answer="This term describes the practice of regularly applying these to a Windows system to protect against known vulnerabilities and exploits." data-value="$200">$200</div>
+        <div class="question" data-question="What is PowerShell?" data-answer="This command-line shell and scripting language is designed for system administration, allowing for the automation of batch processing and creating system management tools." data-value="$400">$400</div>
+        <div class="question" data-question="What is Active Directory?" data-answer="This Windows service, available in enterprise environments, enables the management of authentication and authorization for users and computers within a network." data-value="$600">$600</div>
+        <div class="question" data-question="What is the Resource Monitor?" data-answer="This is a graphical interface tool that provides a detailed overview of system performance, including real-time graphs of system resource usage." data-value="$800">$800</div>
+        <div class="question" data-question="What is the Registry?" data-answer="This holds configurations and other settings for applications in a Windows system." data-value="$1000">$1000</div>
+        <div class="question" data-question="What is False?" data-answer="Active Directory and LDAP can NOT be used on the same domain." data-value="$1200">$1200</div>
+        <div class="question" data-question="What is True?" data-answer="PowerShell can be used to administer local users and groups on a remote workstation." data-value="$1600">$1600</div>
+    </div>
 </div>
 </div>
 <script src="script.js"></script>

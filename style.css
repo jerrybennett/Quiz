@@ -13,7 +13,7 @@ body, html {
     justify-content: center;
     align-items: center;
     font-family: 'Arial', sans-serif;
-    background-color: #32373c; /* Matching the Jeopardy blue */
+    background-color: #32373c; /* Matching the game blue */
 }
 
 .container {
@@ -27,7 +27,7 @@ body, html {
 .board-title {
     font-family: 'gyparodyhv';
     font-size: 60px;
-    /* color: #ffffff; /* Matching the Jeopardy blue */
+    /* color: #ffffff; /* Matching the game blue */
     margin: 0 auto 20px; /* Ensures title is centered with bottom margin */
     color: #de4b51;
     text-shadow: -1px -1px 0 #fcb900, 1px -1px 0 #0693e3, -1px 1px 0 #00d084, 2px 2px 0 #9b51e0;
@@ -49,7 +49,7 @@ body, html {
     padding: 1rem;
 }
 
-.jeopardy-board {
+.game-board {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 10px;
@@ -80,9 +80,9 @@ body, html {
     text-shadow: none;
 }
 
-.jeopardy-board {
+.game-board {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 categories */
+    grid-template-columns: repeat(6, 1fr); /* 5 categories */
     gap: 10px;
 }
 
@@ -93,4 +93,15 @@ body, html {
 .question.blank {
     background-color: #00b3e6; /* Adjust to your original card color */
     color: #00b3e6; /* Hide text by matching it to the background color */
+}
+.text-display {
+    width: 100%; /* Or adjust to fit your layout */
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0; /* Light background for visibility */
+    color: #333; /* Dark text for contrast */
+    font-size: 24px; /* Large text size */
+    display: none; /* Initially hidden */
+    font-weight: bold;
 }
