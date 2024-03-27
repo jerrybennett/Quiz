@@ -26,10 +26,10 @@ body, html {
 
 .board-title {
     font-family: 'gyparodyhv';
-    font-size: 60px;
+    font-size: 80px;
     /* color: #ffffff; /* Matching the game blue */
     margin: 0 auto 20px; /* Ensures title is centered with bottom margin */
-    color: #de4b51;
+    color: #00b3e6;
     text-shadow: -1px -1px 0 #fcb900, 1px -1px 0 #0693e3, -1px 1px 0 #00d084, 2px 2px 0 #9b51e0;
 }
 
